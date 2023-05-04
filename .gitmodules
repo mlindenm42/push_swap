@@ -1,0 +1,3 @@
+[submodule "libraries/libft"]
+	path = libraries/libft
+	url = https://github.com/mlindenm42/libft.git
