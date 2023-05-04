@@ -6,7 +6,7 @@
 #    By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 11:14:27 by mlindenm          #+#    #+#              #
-#    Updated: 2023/05/04 11:16:31 by mlindenm         ###   ########.fr        #
+#    Updated: 2023/05/04 12:39:18 by mlindenm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ LIBFT		=	$(LIBFT_PATH)/libft.a
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MLX) $(OBJ)
+$(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -Wno-gnu-include-next -I./LeakSanitizer/include -L./LeakSanitizer -llsan -lc++ -o $(NAME)
 
 $(LIBFT): $(LIBFT_PATH)
