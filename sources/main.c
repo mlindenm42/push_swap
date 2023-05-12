@@ -6,7 +6,15 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:47:13 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/12 16:47:27 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/12 19:06:33 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/push_swap.h"
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("test\n");
+	return (0);
+}
