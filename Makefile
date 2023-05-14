@@ -6,7 +6,7 @@
 #    By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 11:14:27 by mlindenm          #+#    #+#              #
-#    Updated: 2023/05/12 19:20:23 by mlindenm         ###   ########.fr        #
+#    Updated: 2023/05/14 21:37:39 by mlindenm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_DIR		=	$(SRC_DIR)/obj
 LIBFT_PATH	=	libraries/libft
 LIBFT		=	$(LIBFT_PATH)/libft.a
 
-SRC			=	$(wildcard $(SRC_DIR)/*.c)
+SRC			=	$(SRC_DIR)/main.c $(SRC_DIR)/dlist.c
 OBJ			=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 all: $(NAME)
