@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 17:07:51 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:33:59 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_stack_ptr
 {
 	struct s_stack	*a;
 	struct s_stack	*b;
+	t_node	*buffer;
 }	t_stack_ptr;
 
 void	error(char *reason);
@@ -52,4 +53,5 @@ t_node	*remove_node_from_stack_bottom(t_stack_ptr *stack_ptr, t_stack *stack);
 
 void	sa(t_stack_ptr *stack_ptr);
 void	sb(t_stack_ptr *stack_ptr);
+void	ss(t_stack_ptr *stack_ptr);
 #endif
