@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 18:48:32 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/15 19:26:09 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,12 @@ t_node	*remove_node_from_stack_bottom(t_stack_ptr *stack_ptr, t_stack *stack);
 void	sa(t_stack_ptr *stack_ptr);
 void	sb(t_stack_ptr *stack_ptr);
 void	ss(t_stack_ptr *stack_ptr);
+void	pa(t_stack_ptr *stack_ptr);
+void	pb(t_stack_ptr *stack_ptr);
+void	ra(t_stack_ptr *stack_ptr);
+void	rb(t_stack_ptr *stack_ptr);
+void	rr(t_stack_ptr *stack_ptr);
+void	rra(t_stack_ptr *stack_ptr);
+void	rrb(t_stack_ptr *stack_ptr);
+void	rrr(t_stack_ptr *stack_ptr);
 #endif
