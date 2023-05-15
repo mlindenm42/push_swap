@@ -6,12 +6,11 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:47:13 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 17:03:29 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:02:43 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include "../libraries/libft/libft.h" //ft_atoi();
 #include <stdlib.h> //malloc();
 
 int	main(int argc, char *argv[])

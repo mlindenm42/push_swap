@@ -6,16 +6,15 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 17:33:59 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:48:32 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h> //printf();
-
-// void	free_str(char **str);
+# include <unistd.h> //NULL; write();
+// # include <stdio.h> //printf();
 
 typedef struct s_node
 {
@@ -32,8 +31,8 @@ typedef struct s_stack
 
 typedef struct s_stack_ptr
 {
-	struct s_stack	*a;
-	struct s_stack	*b;
+	t_stack	*a;
+	t_stack	*b;
 	t_node	*buffer;
 }	t_stack_ptr;
 
