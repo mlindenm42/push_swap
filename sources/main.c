@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:47:13 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 18:02:43 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/15 21:08:32 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,32 @@ int	main(int argc, char *argv[])
 	free_all(stack_ptr);
 	return (0);
 }
+
+// #include "../push_swap/libraries/libft/libft.h" //ft_putnbr_fd();
+// void	print_stack(t_stack_ptr	*stack_ptr)
+// {
+// 	t_node	*ptr;
+
+// 	write(1, "Stack A: ", 9);
+// 	if (stack_ptr->a->start == NULL)
+// 		write(1, "-", 1);
+// 	ptr = stack_ptr->a->start;
+// 	while (ptr != NULL)
+// 	{
+// 		ft_putnbr_fd(ptr->number, 1);
+// 		write(1, " ", 1);
+// 		ptr = ptr->next;
+// 	}
+// 	write(1, "\n", 1);
+// 	write(1, "Stack B: ", 9);
+// 	if (stack_ptr->b->start == NULL)
+// 		write(1, "-", 1);
+// 	ptr = stack_ptr->b->start;
+// 	while (ptr != NULL)
+// 	{
+// 		ft_putnbr_fd(ptr->number, 1);
+// 		write(1, " ", 1);
+// 		ptr = ptr->next;
+// 	}
+// 	write(1, "\n", 1);
+// }
