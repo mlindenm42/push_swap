@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 19:26:09 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/15 21:25:52 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h> //NULL; write();
-// # include <stdio.h> //printf();
+# include <stdio.h> //printf();
 
 typedef struct s_node
 {
