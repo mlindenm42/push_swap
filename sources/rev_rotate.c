@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:35:24 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/16 10:44:21 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:17:44 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	rra(t_stack_ptr *stack_ptr)
 	t_node	*ptr;
 
 	ptr = NULL;
+	if (!stack_ptr->a->end)
+		return ;
 	ptr = remove_node_from_stack_bottom(stack_ptr->a);
 	add_node_to_stack_top(stack_ptr->a, ptr);
 	ptr = NULL;
@@ -32,6 +34,8 @@ void	rrb(t_stack_ptr *stack_ptr)
 	t_node	*ptr;
 
 	ptr = NULL;
+	if (!stack_ptr->b->end)
+		return ;
 	ptr = remove_node_from_stack_bottom(stack_ptr->b);
 	add_node_to_stack_top(stack_ptr->b, ptr);
 	ptr = NULL;
@@ -44,6 +48,8 @@ void	rrr(t_stack_ptr *stack_ptr)
 	t_node	*ptr;
 
 	ptr = NULL;
+	if (!stack_ptr->a->end && !stack_ptr->b->end)
+		return ;
 	ptr = remove_node_from_stack_bottom(stack_ptr->a);
 	add_node_to_stack_top(stack_ptr->a, ptr);
 	ptr = NULL;
