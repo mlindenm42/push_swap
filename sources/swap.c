@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:35:30 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/16 09:38:43 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:25:14 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	sa(t_stack_ptr *stack_ptr)
 	ptr = NULL;
 	if (stack_ptr->a == NULL)
 		error_data(stack_ptr, "No stack!\n");
+	if (!(stack_ptr->a->start && stack_ptr->a->start->next))
+		return ;
 	stack_ptr->buffer = remove_node_from_stack_top(stack_ptr->a);
 	ptr = remove_node_from_stack_top(stack_ptr->a);
 	add_node_to_stack_top(stack_ptr->a, stack_ptr->buffer);
@@ -35,6 +37,8 @@ void	sb(t_stack_ptr *stack_ptr)
 	ptr = NULL;
 	if (stack_ptr->b == NULL)
 		error_data(stack_ptr, "No stack!\n");
+	if (!(stack_ptr->b->start && stack_ptr->b->start->next))
+		return ;
 	stack_ptr->buffer = remove_node_from_stack_top(stack_ptr->b);
 	ptr = remove_node_from_stack_top(stack_ptr->b);
 	add_node_to_stack_top(stack_ptr->b, stack_ptr->buffer);
@@ -51,6 +55,8 @@ void	ss(t_stack_ptr *stack_ptr)
 	ptr = NULL;
 	if (stack_ptr->a == NULL)
 		error_data(stack_ptr, "No stack!\n");
+	if (!(stack_ptr->a->start && stack_ptr->a->start->next))
+		return ;
 	stack_ptr->buffer = remove_node_from_stack_top(stack_ptr->a);
 	ptr = remove_node_from_stack_top(stack_ptr->a);
 	add_node_to_stack_top(stack_ptr->a, stack_ptr->buffer);
@@ -59,6 +65,8 @@ void	ss(t_stack_ptr *stack_ptr)
 	ptr = NULL;
 	if (stack_ptr->b == NULL)
 		error_data(stack_ptr, "No stack!\n");
+	if (!(stack_ptr->b->start && stack_ptr->b->start->next))
+		return ;
 	stack_ptr->buffer = remove_node_from_stack_top(stack_ptr->b);
 	ptr = remove_node_from_stack_top(stack_ptr->b);
 	add_node_to_stack_top(stack_ptr->b, stack_ptr->buffer);
