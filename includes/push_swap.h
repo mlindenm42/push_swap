@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/16 09:30:00 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 00:02:32 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,17 @@ typedef struct s_stack_ptr
 	t_stack	*a;
 	t_stack	*b;
 	t_node	*buffer;
+	char	**ptrptr;
 }	t_stack_ptr;
 
 void	error(char *reason);
 void	error_data(t_stack_ptr *stack_ptr, char *reason);
+void	free_ptrptr(t_stack_ptr *stack_ptr);
 void	free_all(t_stack_ptr *stack_ptr);
 
 void	init_stack(t_stack_ptr *stack_ptr, int argc, char *argv[]);
 
-t_node	*make_node(int number);
+t_node	*make_node(t_stack_ptr *stack_ptr, int number);
 int		add_node_to_stack_top(t_stack *stack, t_node *node);
 int		add_node_to_stack_bottom(t_stack *stack, t_node *node);
 t_node	*remove_node_from_stack_top(t_stack *stack);
