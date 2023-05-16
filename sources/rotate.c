@@ -6,12 +6,14 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:35:27 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/16 09:36:55 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:43:10 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*ra (rotate a): Shift up all elements of stack a by 1. The first element
+becomes the last one.*/
 void	ra(t_stack_ptr *stack_ptr)
 {
 	t_node	*ptr;
@@ -23,6 +25,8 @@ void	ra(t_stack_ptr *stack_ptr)
 	write(1, "ra\n", 3);
 }
 
+/*rb (rotate b): Shift up all elements of stack b by 1. The first element
+becomes the last one.*/
 void	rb(t_stack_ptr *stack_ptr)
 {
 	t_node	*ptr;
@@ -34,6 +38,7 @@ void	rb(t_stack_ptr *stack_ptr)
 	write(1, "rb\n", 3);
 }
 
+/*rr : ra and rb at the same time.*/
 void	rr(t_stack_ptr *stack_ptr)
 {
 	t_node	*ptr;
