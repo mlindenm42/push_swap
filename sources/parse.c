@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:43:02 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 23:47:53 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:34:27 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	init_stack(t_stack_ptr *stack_ptr, int argc, char *argv[])
 		{
 			if (*(ptrptr + j)[0] == '0')
 			{
-				add_node_to_stack_bottom(stack_ptr, stack_ptr->a,
-					make_node(stack_ptr, 0));
+				add_node_to_stack_bottom(stack_ptr->a,
+					make_node(0));
 				free(*(ptrptr + j++));
 			}
 			else
@@ -62,8 +62,8 @@ void	init_stack(t_stack_ptr *stack_ptr, int argc, char *argv[])
 					free(ptrptr);
 					error_data(stack_ptr, "atoi failed!\n");
 				}
-				add_node_to_stack_bottom(stack_ptr, stack_ptr->a,
-					make_node(stack_ptr, ft_atoi(*(ptrptr + j++))));
+				add_node_to_stack_bottom(stack_ptr->a,
+					make_node(ft_atoi(*(ptrptr + j++))));
 			}
 		}
 		free(ptrptr);

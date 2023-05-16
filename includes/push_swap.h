@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/15 21:25:52 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:30:00 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,11 @@ void	free_all(t_stack_ptr *stack_ptr);
 
 void	init_stack(t_stack_ptr *stack_ptr, int argc, char *argv[]);
 
-t_node	*make_node(t_stack_ptr *stack_ptr, int number);
-void	add_node_to_stack_top(t_stack_ptr *stack_ptr,
-			t_stack *stack, t_node *s_node);
-void	add_node_to_stack_bottom(t_stack_ptr *stack_ptr,
-			t_stack *stack, t_node *s_node);
-t_node	*remove_node_from_stack_top(t_stack_ptr *stack_ptr, t_stack *stack);
-t_node	*remove_node_from_stack_bottom(t_stack_ptr *stack_ptr, t_stack *stack);
+t_node	*make_node(int number);
+int		add_node_to_stack_top(t_stack *stack, t_node *node);
+int		add_node_to_stack_bottom(t_stack *stack, t_node *node);
+t_node	*remove_node_from_stack_top(t_stack *stack);
+t_node	*remove_node_from_stack_bottom(t_stack *stack);
 
 void	sa(t_stack_ptr *stack_ptr);
 void	sb(t_stack_ptr *stack_ptr);
