@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:43:02 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 10:24:01 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:31:18 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include "../libraries/libft/libft.h" //ft_isdigit();
-#include <stdlib.h> //malloc();
+#include "../libraries/libft/libft.h" //ft_isdigit(); ft_split();
 
 static int	check_duplicates_recursive(t_node *node, int number)
 {

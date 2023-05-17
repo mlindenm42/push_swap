@@ -6,12 +6,12 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:19:42 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 10:24:39 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:29:46 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include "../libraries/libft/libft.h" //ft_isdigit();
+#include "../libraries/libft/libft.h" //ft_isdigit(); ft_split();
 #include <stdlib.h> //malloc();
 
 static int	atoi_push_swap(t_stack_ptr *stack_ptr, const char *str)
