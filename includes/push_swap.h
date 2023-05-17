@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 00:02:32 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:23:45 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	free_ptrptr(t_stack_ptr *stack_ptr);
 void	free_all(t_stack_ptr *stack_ptr);
 
 void	init_stack(t_stack_ptr *stack_ptr, int argc, char *argv[]);
+void	check_arg(t_stack_ptr *stack_ptr, int argc, char *argv[]);
+int		check_duplicates(t_stack_ptr *stack_ptr);
 
 t_node	*make_node(t_stack_ptr *stack_ptr, int number);
 int		add_node_to_stack_top(t_stack *stack, t_node *node);

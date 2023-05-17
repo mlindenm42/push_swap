@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:36:03 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 00:10:19 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:15:56 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	free_ptrptr(t_stack_ptr *stack_ptr)
 	int	i;
 
 	i = 0;
+	if (stack_ptr->ptrptr == NULL)
+		return ;
 	while (*(stack_ptr->ptrptr + i) != NULL)
 	{
 		free(*(stack_ptr->ptrptr + i));

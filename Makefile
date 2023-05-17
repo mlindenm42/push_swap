@@ -6,7 +6,7 @@
 #    By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 11:14:27 by mlindenm          #+#    #+#              #
-#    Updated: 2023/05/15 19:26:27 by mlindenm         ###   ########.fr        #
+#    Updated: 2023/05/17 10:26:06 by mlindenm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_DIR		=	$(SRC_DIR)/obj
 LIBFT_PATH	=	libraries/libft
 LIBFT		=	$(LIBFT_PATH)/libft.a
 
-SRC			=	$(SRC_DIR)/main.c $(SRC_DIR)/dlist.c $(SRC_DIR)/error.c $(SRC_DIR)/parse.c $(SRC_DIR)/push.c $(SRC_DIR)/rev_rotate.c $(SRC_DIR)/rotate.c $(SRC_DIR)/swap.c
+SRC			=	$(SRC_DIR)/main.c $(SRC_DIR)/check.c $(SRC_DIR)/dlist.c $(SRC_DIR)/error.c $(SRC_DIR)/init_stack.c $(SRC_DIR)/push.c $(SRC_DIR)/rev_rotate.c $(SRC_DIR)/rotate.c $(SRC_DIR)/swap.c
 OBJ			=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 all: $(NAME)
