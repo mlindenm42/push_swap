@@ -6,21 +6,21 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:49:18 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/16 15:33:15 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:36:07 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdlib.h> //malloc();
 
-t_node	*make_node(t_stack_ptr *stack_ptr, int number)
+t_node	*make_node(t_stack_ptr *p, int number)
 {
 	t_node	*ptr;
 
 	ptr = (t_node *)malloc(sizeof(t_node));
 	if (ptr == NULL)
-		error_data(stack_ptr, "malloc node failed!\n");
-	ptr->number = number;
+		error_data(p, "malloc node failed!\n");
+	ptr->nb = number;
 	ptr->next = NULL;
 	ptr->previous = NULL;
 	return (ptr);

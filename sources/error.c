@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:36:03 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 10:15:56 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:36:44 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,59 +20,59 @@ void	error(char *reason)
 	exit(EXIT_FAILURE);
 }
 
-void	error_data(t_stack_ptr *stack_ptr, char *reason)
+void	error_data(t_stack_ptr *p, char *reason)
 {
-	free_all(stack_ptr);
+	free_all(p);
 	write(2, "Error\n", 6);
 	write(2, reason, ft_strlen(reason));
 	exit(EXIT_FAILURE);
 }
 
-void	free_ptrptr(t_stack_ptr *stack_ptr)
+void	free_ptrptr(t_stack_ptr *p)
 {
 	int	i;
 
 	i = 0;
-	if (stack_ptr->ptrptr == NULL)
+	if (p->ptrptr == NULL)
 		return ;
-	while (*(stack_ptr->ptrptr + i) != NULL)
+	while (*(p->ptrptr + i) != NULL)
 	{
-		free(*(stack_ptr->ptrptr + i));
-		*(stack_ptr->ptrptr + i) = NULL;
+		free(*(p->ptrptr + i));
+		*(p->ptrptr + i) = NULL;
 		i++;
 	}
-	if (stack_ptr->ptrptr != NULL)
+	if (p->ptrptr != NULL)
 	{
-		free(stack_ptr->ptrptr);
-		stack_ptr->ptrptr = NULL;
+		free(p->ptrptr);
+		p->ptrptr = NULL;
 	}
 }
 
-void	free_all(t_stack_ptr *stack_ptr)
+void	free_all(t_stack_ptr *p)
 {
-	free_ptrptr(stack_ptr);
-	while (stack_ptr->a->start != NULL)
-		free(remove_node_from_stack_top(stack_ptr->a));
-	while (stack_ptr->b->start != NULL)
-		free(remove_node_from_stack_top(stack_ptr->b));
-	if (stack_ptr->buffer != NULL)
+	free_ptrptr(p);
+	while (p->a->start != NULL)
+		free(remove_node_from_stack_top(p->a));
+	while (p->b->start != NULL)
+		free(remove_node_from_stack_top(p->b));
+	if (p->buffer != NULL)
 	{
-		free(stack_ptr->buffer);
-		stack_ptr->buffer = NULL;
+		free(p->buffer);
+		p->buffer = NULL;
 	}
-	if (stack_ptr->a != NULL)
+	if (p->a != NULL)
 	{
-		free(stack_ptr->a);
-		stack_ptr->a = NULL;
+		free(p->a);
+		p->a = NULL;
 	}
-	if (stack_ptr->b != NULL)
+	if (p->b != NULL)
 	{
-		free(stack_ptr->b);
-		stack_ptr->b = NULL;
+		free(p->b);
+		p->b = NULL;
 	}
-	if (stack_ptr != NULL)
+	if (p != NULL)
 	{
-		free(stack_ptr);
-		stack_ptr = NULL;
+		free(p);
+		p = NULL;
 	}
 }

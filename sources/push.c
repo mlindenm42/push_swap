@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:35:14 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/16 10:42:13 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:37:59 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,30 @@
 
 /*pa (push a): Take the first element at the top of b and put it at the top of
 a. Do nothing if b is empty.*/
-void	pa(t_stack_ptr *stack_ptr)
+void	pa(t_stack_ptr *p)
 {
 	t_node	*ptr;
 
 	ptr = NULL;
-	if (stack_ptr->b->start == NULL)
+	if (p->b->start == NULL)
 		return ;
-	ptr = remove_node_from_stack_top(stack_ptr->b);
-	add_node_to_stack_top(stack_ptr->a, ptr);
+	ptr = remove_node_from_stack_top(p->b);
+	add_node_to_stack_top(p->a, ptr);
 	ptr = NULL;
 	write(1, "pa\n", 3);
 }
 
 /*pb (push b): Take the first element at the top of a and put it at the top of
 b. Do nothing if a is empty.*/
-void	pb(t_stack_ptr *stack_ptr)
+void	pb(t_stack_ptr *p)
 {
 	t_node	*ptr;
 
 	ptr = NULL;
-	if (stack_ptr->a->start == NULL)
+	if (p->a->start == NULL)
 		return ;
-	ptr = remove_node_from_stack_top(stack_ptr->a);
-	add_node_to_stack_top(stack_ptr->b, ptr);
+	ptr = remove_node_from_stack_top(p->a);
+	add_node_to_stack_top(p->b, ptr);
 	ptr = NULL;
 	write(1, "pb\n", 3);
 }

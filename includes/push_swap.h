@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 10:23:45 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:31:34 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct s_node
 {
-	int				number;
+	int				nb;
 	struct s_node	*next;
 	struct s_node	*previous;
 }	t_node;
@@ -63,4 +63,6 @@ void	rr(t_stack_ptr *stack_ptr);
 void	rra(t_stack_ptr *stack_ptr);
 void	rrb(t_stack_ptr *stack_ptr);
 void	rrr(t_stack_ptr *stack_ptr);
+
+void	sort3(t_stack_ptr *stack_ptr);
 #endif

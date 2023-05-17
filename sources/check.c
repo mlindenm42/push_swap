@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:43:02 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 10:31:18 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:35:51 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ static int	check_duplicates_recursive(t_node *node, int number)
 {
 	if (node == NULL)
 		return (1);
-	if (node->number == number)
+	if (node->nb == number)
 		return (0);
 	return (check_duplicates_recursive(node->next, number));
 }
 
-int	check_duplicates(t_stack_ptr *stack_ptr)
+int	check_duplicates(t_stack_ptr *p)
 {
 	t_node	*node;
 
-	node = stack_ptr->a->start;
-	while (node != stack_ptr->a->end)
+	node = p->a->start;
+	while (node != p->a->end)
 	{
-		if (!check_duplicates_recursive(node->next, node->number))
+		if (!check_duplicates_recursive(node->next, node->nb))
 			return (0);
 		node = node->next;
 	}
@@ -55,26 +55,26 @@ static int	check_string(char *str)
 	return (1);
 }
 
-void	check_arg(t_stack_ptr *stack_ptr, int argc, char *argv[])
+void	check_arg(t_stack_ptr *p, int argc, char *argv[])
 {
 	int		i;
 	int		j;
 
 	i = 1;
 	j = 0;
-	stack_ptr->ptrptr = NULL;
+	p->ptrptr = NULL;
 	while (i < argc)
 	{
-		stack_ptr->ptrptr = ft_split(argv[i++], ' ');
-		if (stack_ptr->ptrptr == NULL)
-			error_data(stack_ptr, "split failed!\n");
-		while (*(stack_ptr->ptrptr + j) != NULL)
+		p->ptrptr = ft_split(argv[i++], ' ');
+		if (p->ptrptr == NULL)
+			error_data(p, "split failed!\n");
+		while (*(p->ptrptr + j) != NULL)
 		{
-			if (!check_string(*(stack_ptr->ptrptr + j)))
-				error_data(stack_ptr, "invalid characters as arguments!\n");
+			if (!check_string(*(p->ptrptr + j)))
+				error_data(p, "invalid characters as arguments!\n");
 			j++;
 		}
 		j = 0;
-		free_ptrptr(stack_ptr);
+		free_ptrptr(p);
 	}
 }
