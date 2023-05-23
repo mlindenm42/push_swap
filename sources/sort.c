@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 23:11:08 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 23:17:12 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,19 +118,19 @@ void	sort_small(t_stack_ptr *p)
 void	sort_big(t_stack_ptr *p)
 {
 	int	max_bits;
+	int	bit;
 	int	i;
-	int	j;
 
 	max_bits = 0;
 	while (((p->size - 1) >> max_bits) != 0)
 		++max_bits;
-	i = -1;
-	while (i++ < max_bits)
+	bit = -1;
+	while (bit++ < max_bits)
 	{
-		j = -1;
-		while (++j < p->size)
+		i = -1;
+		while (++i < p->size)
 		{
-			if (((p->a->start->pos_end >> i)&1) == 1)
+			if (((p->a->start->pos_end >> bit) & 1) == 1)
 				ra(p);
 			else
 				pb(p);
