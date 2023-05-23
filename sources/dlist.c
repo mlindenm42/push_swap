@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:49:18 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 14:36:07 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 10:56:15 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,19 @@
 t_node	*make_node(t_stack_ptr *p, int number)
 {
 	t_node	*ptr;
+	// int	i;
 
 	ptr = (t_node *)malloc(sizeof(t_node));
 	if (ptr == NULL)
 		error_data(p, "malloc node failed!\n");
+	// i = 0;
 	ptr->nb = number;
+	// while (number > 0)
+	// {
+	// 	ptr->binary[i] = number % 2;
+	// 	number /= 2;
+	// 	i++;
+	// }
 	ptr->next = NULL;
 	ptr->previous = NULL;
 	return (ptr);

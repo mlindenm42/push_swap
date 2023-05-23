@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:47:13 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 19:01:15 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:16:15 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,15 @@ int	main(int argc, char *argv[])
 	if (p == NULL)
 		error("malloc p\n");
 	init_stack(p, argc, argv);
-	sort5(p);
+	if (get_stack_size(p->a) == 2)
+	{
+		if (!is_sorted(p))
+			sa(p);
+	}
+	else if (get_stack_size(p->a) == 3)
+		sort3(p);
+	else if (get_stack_size(p->a) > 3)
+		sort5(p);
 	free_all(p);
 	return (0);
 }

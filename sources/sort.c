@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 19:03:47 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:50:13 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,27 +59,8 @@ int	get_stack_size(t_stack *stack)
 	return (i);
 }
 
-void	push_smallest_a_to_b(t_stack_ptr *p)
+void	idk(t_stack_ptr *p, int pos)
 {
-	t_node	*node;
-	t_node	*smallest;
-	int		i;
-	int		pos;
-
-	i = 1;
-	pos = 0;
-	node = p->a->start;
-	smallest = p->a->start;
-	while (node != NULL)
-	{
-		if (smallest->nb > node->nb)
-		{
-			smallest = node;
-			pos = i;
-		}
-		i++;
-		node = node->next;
-	}
 	if (pos == 1)
 	{
 		pb(p);
@@ -101,28 +82,40 @@ void	push_smallest_a_to_b(t_stack_ptr *p)
 			pos++;
 		}
 	}
+}
+
+void	push_smallest_a_to_b(t_stack_ptr *p)
+{
+	t_node	*node;
+	t_node	*smallest;
+	int		i;
+	int		pos;
+
+	i = 1;
+	pos = 0;
+	node = p->a->start;
+	smallest = p->a->start;
+	while (node != NULL)
+	{
+		if (smallest->nb > node->nb)
+		{
+			smallest = node;
+			pos = i;
+		}
+		i++;
+		node = node->next;
+	}
+	idk(p, pos);
 	pb(p);
 }
 
 void	sort5(t_stack_ptr *p)
 {
-	push_smallest_a_to_b(p);
-	push_smallest_a_to_b(p);
-	while (!is_sorted(p))
-	{
-		if (p->a->start->nb < p->a->start->next->nb
-			&& p->a->start->next->nb < p->a->start->next->next->nb)
-			return ;
-		if (p->a->start->nb > p->a->start->next->nb
-			&& p->a->start->next->nb < p->a->start->next->next->nb)
-			sa(p);
-		else if (p->a->start->nb < p->a->start->next->nb
-			&& p->a->start->next->nb > p->a->start->next->next->nb)
-			rra(p);
-		else if (p->a->start->nb > p->a->start->next->nb
-			&& p->a->start->next->nb > p->a->start->next->next->nb)
-			ra(p);
-	}
+	if (!is_sorted(p) && get_stack_size(p->a) == 5)
+		push_smallest_a_to_b(p);
+	if (!is_sorted(p) && get_stack_size(p->a) == 4)
+		push_smallest_a_to_b(p);
+	sort3(p);
 	pa(p);
 	pa(p);
 }
