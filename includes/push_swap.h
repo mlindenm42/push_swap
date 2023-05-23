@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 10:56:25 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:13:46 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 typedef struct s_node
 {
 	int				nb;
-	// int				binary[32];
+	unsigned int	pos_end;
+	unsigned int	pos_end_binary[32];
 	struct s_node	*next;
 	struct s_node	*previous;
 }	t_node;

@@ -6,13 +6,42 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:19:42 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 14:37:38 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:14:27 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../libraries/libft/libft.h" //ft_isdigit(); ft_split();
 #include <stdlib.h> //malloc();
+
+void	add_end_pos(t_stack_ptr *p)
+{
+	t_node	*ptr;
+	t_node	*ptr2;
+	int		i;
+	int		pos;
+
+	ptr = p->a->start;
+	while (ptr != NULL)
+	{
+		pos = 0;
+		ptr2 = p->a->start;
+		while (ptr2 != NULL)
+		{
+			if (ptr->nb > ptr2->nb)
+				pos++;
+			ptr2 = ptr2->next;
+		}
+		ptr->pos_end = pos;
+		i = 0;
+		while (i <= 31)
+		{
+			ptr->pos_end_binary[i++] = pos % 2;
+			pos /= 2;
+		}
+		ptr = ptr->next;
+	}
+}
 
 static int	atoi_push_swap(t_stack_ptr *p, const char *str)
 {
@@ -91,4 +120,5 @@ void	init_stack(t_stack_ptr *p, int argc, char *argv[])
 		error_data(p, "empty list!\n");
 	if (!check_duplicates(p))
 		error_data(p, "duplicates!\n");
+	add_end_pos(p);
 }
