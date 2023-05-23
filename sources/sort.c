@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 16:15:39 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:23:35 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,12 @@ void	sort_small(t_stack_ptr *p)
 	pa(p);
 }
 
-void	sort_big(t_stack_ptr *p)
-{
-	if (is_sorted(p))
-		return ;
+// void	sort_big(t_stack_ptr *p)
+// {
+// 	static int	i = 31;
 
-}
+// 	if (is_sorted(p))
+// 		return ;
+
+
+// }

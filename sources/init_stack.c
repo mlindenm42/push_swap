@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:19:42 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 15:14:27 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:22:41 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	add_end_pos(t_stack_ptr *p)
 			ptr2 = ptr2->next;
 		}
 		ptr->pos_end = pos;
-		i = 0;
-		while (i <= 31)
+		i = 31;
+		while (i >= 0)
 		{
-			ptr->pos_end_binary[i++] = pos % 2;
+			ptr->pos_end_binary[i--] = pos % 2;
 			pos /= 2;
 		}
 		ptr = ptr->next;
