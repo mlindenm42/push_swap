@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 15:13:46 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:15:27 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	rra(t_stack_ptr *stack_ptr);
 void	rrb(t_stack_ptr *stack_ptr);
 void	rrr(t_stack_ptr *stack_ptr);
 
-void	sort3(t_stack_ptr *stack_ptr);
-void	sort5(t_stack_ptr *stack_ptr);
+void	sort_small(t_stack_ptr *stack_ptr);
+void	sort_big(t_stack_ptr *p);
 int		get_stack_size(t_stack *stack);
 int		is_sorted(t_stack_ptr *p);
 #endif
