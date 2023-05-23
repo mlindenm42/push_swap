@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:42:25 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 16:15:27 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 22:42:08 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_stack_ptr
 	t_stack	*b;
 	t_node	*buffer;
 	char	**ptrptr;
+	int		size;
 }	t_stack_ptr;
 
 void	error(char *reason);
@@ -70,4 +71,6 @@ void	sort_small(t_stack_ptr *stack_ptr);
 void	sort_big(t_stack_ptr *p);
 int		get_stack_size(t_stack *stack);
 int		is_sorted(t_stack_ptr *p);
+
+void	print_stack(t_stack_ptr	*p);
 #endif

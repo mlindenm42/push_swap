@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:47:13 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 16:13:17 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:01:49 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char *argv[])
 	}
 	else if (get_stack_size(p->a) <= 5)
 		sort_small(p);
+	else if (get_stack_size(p->a) > 5)
+		sort_big(p);
 	free_all(p);
 	return (0);
 }
@@ -38,6 +40,7 @@ int	main(int argc, char *argv[])
 // void	print_stack(t_stack_ptr	*p)
 // {
 // 	t_node	*ptr;
+// 	int	i;
 
 // 	write(1, "Stack A: ", 9);
 // 	if (p->a->start == NULL)
@@ -46,6 +49,12 @@ int	main(int argc, char *argv[])
 // 	while (ptr != NULL)
 // 	{
 // 		ft_putnbr_fd(ptr->nb, 1);
+// 		write(1, " ", 1);
+// 		// ft_putnbr_fd(ptr->pos_end, 1);
+// 		// write(1, " ", 1);
+// 		i = 28;
+// 		while (i <= 31)
+// 			ft_putnbr_fd(ptr->pos_end_binary[i++], 1);
 // 		write(1, " ", 1);
 // 		ptr = ptr->next;
 // 	}

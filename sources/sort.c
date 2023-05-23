@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 16:23:35 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 23:11:08 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,12 +115,27 @@ void	sort_small(t_stack_ptr *p)
 	pa(p);
 }
 
-// void	sort_big(t_stack_ptr *p)
-// {
-// 	static int	i = 31;
+void	sort_big(t_stack_ptr *p)
+{
+	int	max_bits;
+	int	i;
+	int	j;
 
-// 	if (is_sorted(p))
-// 		return ;
-
-
-// }
+	max_bits = 0;
+	while (((p->size - 1) >> max_bits) != 0)
+		++max_bits;
+	i = -1;
+	while (i++ < max_bits)
+	{
+		j = -1;
+		while (++j < p->size)
+		{
+			if (((p->a->start->pos_end >> i)&1) == 1)
+				ra(p);
+			else
+				pb(p);
+		}
+		while (p->b->start != NULL)
+			pa(p);
+	}
+}

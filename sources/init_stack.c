@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:19:42 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 16:22:41 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 22:40:33 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ static void	init_ptrs(t_stack_ptr *p)
 	p->b->end = NULL;
 	p->buffer = NULL;
 	p->ptrptr = NULL;
+	p->size = 0;
 }
 
 void	init_stack(t_stack_ptr *p, int argc, char *argv[])

@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:49:18 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 15:37:04 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 22:41:07 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_node	*make_node(t_stack_ptr *p, int number)
 	ptr->nb = number;
 	ptr->next = NULL;
 	ptr->previous = NULL;
+	p->size++;
 	return (ptr);
 }
 
