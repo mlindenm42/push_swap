@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:49:18 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 15:14:14 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/23 15:37:04 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_node	*make_node(t_stack_ptr *p, int number)
 	t_node				*ptr;
 
 	counter++;
-	if (counter > 4294967295)
+	if (counter >= 4294967295)
 		error_data(p, "list too long!\n");
 	ptr = (t_node *)malloc(sizeof(t_node));
 	if (ptr == NULL)
