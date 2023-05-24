@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/24 14:59:18 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/24 19:18:35 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ static void	sort_big(t_stack_ptr *p)
 
 	max_bits = 0;
 	while (((p->size - 1) >> max_bits) != 0)
-		++max_bits;
-	bit = -1;
-	while (bit++ < max_bits)
+		max_bits++;
+	bit = 0;
+	while (bit < max_bits)
 	{
 		i = -1;
 		while (++i < p->size)
@@ -106,8 +106,45 @@ static void	sort_big(t_stack_ptr *p)
 		}
 		while (p->b->start != NULL)
 			pa(p);
+		bit++;
 	}
 }
+
+// static void	sort_big(t_stack_ptr *p)
+// {
+// 	int	max_i;
+// 	int	size;
+// 	int	bit;
+// 	int	i;
+
+// 	max_i = 0;
+// 	size = p->size;
+// 	// printf ("size: %d\n", size);
+// 	while (size / 10 != 0)
+// 	{
+// 		size /=10;
+// 		max_i++;
+// 	}
+// 	// printf ("max_i: %d\n", max_i);
+// 	max_i = 0;
+// 	while (((p->size - 1) >> max_i) != 0)
+// 		++max_i;
+// 	bit = 0;
+// 	while (bit < max_i)
+// 	{
+// 		i = -1;
+// 		while (++i < p->size)
+// 		{
+// 			if (((p->a->start->pos_end >> bit) & 1) == 1)
+// 				ra(p);
+// 			else
+// 				pb(p);
+// 		}
+// 		while (p->b->start != NULL)
+// 			pa(p);
+// 		bit++;
+// 	}
+// }
 
 void	sort(t_stack_ptr *p)
 {
