@@ -6,12 +6,31 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:43:02 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/17 14:35:51 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:42:05 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../libraries/libft/libft.h" //ft_isdigit(); ft_split();
+
+static int	check_string(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (*(str) == '+' || *(str) == '-')
+		i++;
+	if (*(str + i) < '0' || *(str + i) > '9')
+		return (0);
+	while (*(str + i) != '\0')
+	{
+		if (*(str + i) >= '0' && *(str + i) <= '9')
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
 
 static int	check_duplicates_recursive(t_node *node, int number)
 {
@@ -32,25 +51,6 @@ int	check_duplicates(t_stack_ptr *p)
 		if (!check_duplicates_recursive(node->next, node->nb))
 			return (0);
 		node = node->next;
-	}
-	return (1);
-}
-
-static int	check_string(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (*(str) == '+' || *(str) == '-')
-		i++;
-	if (*(str + i) < '0' || *(str + i) > '9')
-		return (0);
-	while (*(str + i) != '\0')
-	{
-		if (*(str + i) >= '0' && *(str + i) <= '9')
-			i++;
-		else
-			return (0);
 	}
 	return (1);
 }

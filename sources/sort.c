@@ -6,44 +6,13 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 23:17:12 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:37:59 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	is_sorted(t_stack_ptr *p)
-{
-	t_node	*node;
-
-	node = p->a->start;
-	while (node != p->a->end)
-	{
-		if (node->nb > node->next->nb)
-			return (0);
-		node = node->next;
-	}
-	return (1);
-}
-
-int	get_stack_size(t_stack *stack)
-{
-	t_node	*node;
-	int		i;
-
-	if (stack->start == NULL)
-		return (0);
-	node = stack->start;
-	i = 1;
-	while (node != stack->end)
-	{
-		i++;
-		node = node->next;
-	}
-	return (i);
-}
-
-void	idk(t_stack_ptr *p, int pos)
+static void	psab_help(t_stack_ptr *p, int pos)
 {
 	if (pos == 1)
 	{
@@ -68,7 +37,7 @@ void	idk(t_stack_ptr *p, int pos)
 	}
 }
 
-void	push_smallest_a_to_b(t_stack_ptr *p)
+static void	push_smallest_a_to_b(t_stack_ptr *p)
 {
 	t_node	*node;
 	t_node	*smallest;
@@ -89,11 +58,11 @@ void	push_smallest_a_to_b(t_stack_ptr *p)
 		i++;
 		node = node->next;
 	}
-	idk(p, pos);
+	psab_help(p, pos);
 	pb(p);
 }
 
-void	sort_small(t_stack_ptr *p)
+static void	sort_small(t_stack_ptr *p)
 {
 	if (!is_sorted(p) && get_stack_size(p->a) == 5)
 		push_smallest_a_to_b(p);
@@ -115,7 +84,7 @@ void	sort_small(t_stack_ptr *p)
 	pa(p);
 }
 
-void	sort_big(t_stack_ptr *p)
+static void	sort_big(t_stack_ptr *p)
 {
 	int	max_bits;
 	int	bit;
@@ -138,4 +107,17 @@ void	sort_big(t_stack_ptr *p)
 		while (p->b->start != NULL)
 			pa(p);
 	}
+}
+
+void	sort(t_stack_ptr *p)
+{
+	if (get_stack_size(p->a) == 2)
+	{
+		if (!is_sorted(p))
+			sa(p);
+	}
+	else if (get_stack_size(p->a) >= 3 && get_stack_size(p->a) <= 5)
+		sort_small(p);
+	else if (get_stack_size(p->a) > 5)
+		sort_big(p);
 }

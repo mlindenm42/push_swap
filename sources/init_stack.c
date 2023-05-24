@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:19:42 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/23 22:40:33 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:19:43 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 #include "../libraries/libft/libft.h" //ft_isdigit(); ft_split();
 #include <stdlib.h> //malloc();
 
-void	add_end_pos(t_stack_ptr *p)
+static void	add_end_pos(t_stack_ptr *p)
 {
 	t_node	*ptr;
 	t_node	*ptr2;
-	int		i;
 	int		pos;
 
 	ptr = p->a->start;
@@ -33,12 +32,6 @@ void	add_end_pos(t_stack_ptr *p)
 			ptr2 = ptr2->next;
 		}
 		ptr->pos_end = pos;
-		i = 31;
-		while (i >= 0)
-		{
-			ptr->pos_end_binary[i--] = pos % 2;
-			pos /= 2;
-		}
 		ptr = ptr->next;
 	}
 }
