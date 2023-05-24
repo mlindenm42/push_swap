@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/24 13:37:59 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/24 14:59:18 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,8 @@ static void	sort_big(t_stack_ptr *p)
 
 void	sort(t_stack_ptr *p)
 {
+	if (is_sorted(p))
+		return ;
 	if (get_stack_size(p->a) == 2)
 	{
 		if (!is_sorted(p))
