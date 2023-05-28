@@ -6,7 +6,7 @@
 /*   By: mlindenm <mlindenm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:05:36 by mlindenm          #+#    #+#             */
-/*   Updated: 2023/05/24 19:18:35 by mlindenm         ###   ########.fr       */
+/*   Updated: 2023/05/28 13:43:44 by mlindenm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,65 +86,29 @@ static void	sort_small(t_stack_ptr *p)
 
 static void	sort_big(t_stack_ptr *p)
 {
-	int	max_bits;
-	int	bit;
+	int	max_index;
+	int	index;
 	int	i;
 
-	max_bits = 0;
-	while (((p->size - 1) >> max_bits) != 0)
-		max_bits++;
-	bit = 0;
-	while (bit < max_bits)
+	max_index = 0;
+	while (((p->size - 1) >> max_index) != 0)
+		max_index++;
+	index = 0;
+	while (index < max_index)
 	{
-		i = -1;
-		while (++i < p->size)
+		i = 0;
+		while (i++ < p->size)
 		{
-			if (((p->a->start->pos_end >> bit) & 1) == 1)
+			if (((p->a->start->pos_end >> index) & 1) == 1)
 				ra(p);
 			else
 				pb(p);
 		}
 		while (p->b->start != NULL)
 			pa(p);
-		bit++;
+		index++;
 	}
 }
-
-// static void	sort_big(t_stack_ptr *p)
-// {
-// 	int	max_i;
-// 	int	size;
-// 	int	bit;
-// 	int	i;
-
-// 	max_i = 0;
-// 	size = p->size;
-// 	// printf ("size: %d\n", size);
-// 	while (size / 10 != 0)
-// 	{
-// 		size /=10;
-// 		max_i++;
-// 	}
-// 	// printf ("max_i: %d\n", max_i);
-// 	max_i = 0;
-// 	while (((p->size - 1) >> max_i) != 0)
-// 		++max_i;
-// 	bit = 0;
-// 	while (bit < max_i)
-// 	{
-// 		i = -1;
-// 		while (++i < p->size)
-// 		{
-// 			if (((p->a->start->pos_end >> bit) & 1) == 1)
-// 				ra(p);
-// 			else
-// 				pb(p);
-// 		}
-// 		while (p->b->start != NULL)
-// 			pa(p);
-// 		bit++;
-// 	}
-// }
 
 void	sort(t_stack_ptr *p)
 {
